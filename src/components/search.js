@@ -7,8 +7,14 @@ angular.module('video-player')
     },
     template: `
     <div class="search-bar form-inline">
-      <input class="form-control" type="text" ng-model="query" />
-      <button ng-click="$ctrl.service.search(query, $ctrl.result)" class="btn">
+      <input class="form-control" type="text" 
+        ng-model="query"
+        ng-model-options="{ debounce: 500 }"
+        ng-change="$ctrl.service.search(query, $ctrl.result)"
+      />
+      <button ng-click="$ctrl.service.search(query, $ctrl.result)" 
+        ng-model-options="{ debounce: 500 }" 
+      class="btn">
         <span class="glyphicon glyphicon-search"></span>
       </button>
     </div>
