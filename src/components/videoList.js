@@ -1,7 +1,13 @@
 angular.module('video-player')
 .component('videoList', {
-  controller: function() {
-    this.videos = window.exampleVideoData;
+  bindings: {
+    videos: '<',
+    onClick : '<'
   },
-  templateUrl: '../src/templates/videoList.html'
+  template: `
+  <ul class="video-list">
+    <video-list-entry ng-repeat="video in $ctrl.videos" video="video" ng-click="$ctlr.onClick()" />
+  </ul>
+  `
+  // templateUrl: '../src/templates/videoList.html'
 });
