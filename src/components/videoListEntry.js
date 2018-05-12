@@ -1,5 +1,5 @@
 angular.module('video-player')
-.component('videoListEntry', {
+  .component('videoListEntry', {
     bindings: {
       video: '<',
       onClick: '<'
@@ -16,4 +16,4 @@ angular.module('video-player')
     </li>
     `
     // templateUrl: '../src/templates/videoListEntry.html'
-});
+  });
