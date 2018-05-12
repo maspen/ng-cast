@@ -6,8 +6,7 @@ angular.module('video-player')
   },
   template: `
   <ul class="video-list">
-    <video-list-entry ng-repeat="video in $ctrl.videos" video="video" ng-click="$ctlr.onClick()" />
+    <video-list-entry ng-repeat="video in $ctrl.videos" video="video" on-click="$ctrl.onClick" />
   </ul>
   `
-  // templateUrl: '../src/templates/videoList.html'
 });

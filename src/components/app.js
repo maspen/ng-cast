@@ -12,6 +12,7 @@ angular.module('video-player')
     this.onClick = function(video) {
       console.log('app#onClick(video) ', video);
     };
+    this.onClick = this.onClick.bind(this);
   },
   template: `
      <div id="app container">
@@ -22,10 +23,10 @@ angular.module('video-player')
       </nav>
       <div class="row">
         <div class="col-md-7">
-          <video-player video="$ctrl.video">[video player]</video-player>
+          <video-player video="$ctrl.video"></video-player>
         </div>
         <div class="col-md-5">
-          <video-list data-videos="$ctrl.videos" data-on-click="$ctrl.onClick"></video-list>
+          <video-list videos="$ctrl.videos" on-click="$ctrl.onClick"></video-list>
         </div>
       <div>
     </div>
